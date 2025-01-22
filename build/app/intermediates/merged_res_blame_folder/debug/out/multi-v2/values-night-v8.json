@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bansalandsons.jeweller.app-mergeDebugResources-41:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.bansalandsons.jewellaryApplication.app-mergeDebugResources-41:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/res/values-night/styles.xml",

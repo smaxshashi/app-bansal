@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bansalandsons.jeweller.app-mergeDebugResources-41:/values-bn/values-bn.xml",
+            "outputFile": "com.bansalandsons.jewellaryApplication.app-mergeDebugResources-41:/values-bn/values-bn.xml",
             "map": [
                 {
                     "source": "/Users/anshumandash/.gradle/caches/transforms-3/dd260bdd6af074a1d895ca8df1272de7/transformed/jetified-media3-exoplayer-1.4.1/res/values-bn/values-bn.xml",

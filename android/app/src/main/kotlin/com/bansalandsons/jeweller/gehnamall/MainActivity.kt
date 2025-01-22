@@ -1,4 +1,4 @@
-package com.bansalandsons.jeweller
+package com.bansalandsons.jewellaryApplication
 
 import io.flutter.embedding.android.FlutterActivity
 
