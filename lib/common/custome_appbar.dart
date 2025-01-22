@@ -132,7 +132,7 @@ void _showMenuDialog(BuildContext context) {
   Widget _buildMenuItem(BuildContext context,
       {required String title, required VoidCallback onTap}) {
     return ListTile(
-      contentPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.only(left: 20.w),
       title: Text(
         title,
         style: appStyle(15, Colors.black, FontWeight.w500),

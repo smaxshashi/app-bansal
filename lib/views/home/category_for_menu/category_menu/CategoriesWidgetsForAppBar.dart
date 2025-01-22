@@ -20,13 +20,14 @@ class CategoriesWidgetsForAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 100
+            width: 400
                 .w, // Define a width for the container relative to the screen size
             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 10.h),
             child: Text(
               title,
               textAlign: TextAlign.left,
               style: appStyle(15, Colors.black, FontWeight.w500),
+              maxLines: 1,
             ),
           ),
         ],
