@@ -38,7 +38,7 @@ class _YourFeedbackState extends State<YourFeedback> {
           height: 250.h,
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
           decoration: BoxDecoration(
-            color: kWhite,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(16.r),
           ),
           child: Column(
@@ -48,6 +48,8 @@ class _YourFeedbackState extends State<YourFeedback> {
               Image.asset(
                 'assets/images/rate12.png',
                 height: 50.h,
+                
+                
               ),
               // Feedback Text
               Padding(
