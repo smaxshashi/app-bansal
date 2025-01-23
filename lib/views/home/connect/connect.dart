@@ -14,7 +14,7 @@ class ConnectWithUs extends StatefulWidget {
 class _ConnectWithUsState extends State<ConnectWithUs> {
   // Function to open WhatsApp with a pre-filled message
   void _openWhatsApp() async {
-    String phoneNumber = "+91982031621"; // Indian phone number
+    String phoneNumber = "+917982031621"; // Indian phone number
     String message =
         "Hello, I have a question regarding the product from your app.";
     String url =
