@@ -230,4 +230,35 @@ class AuthService {
       return false;
     }
   }
+  // Delete Account Function
+  static Future<Map<String, dynamic>> deleteAccount(String phoneNumber) async {
+    final baseUrl = Uri.parse(
+        'https://user-service-254137058023.asia-south1.run.app/user/accountDeletion');
+    final url = await appendWholesalerId(baseUrl);
+
+    try {
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: {
+          'phoneNumber': phoneNumber,
+          'wholesalerId': await fetchWholesalerId().toString(),
+        },
+      );
+      final data = json.decode(response.body);
+
+      if (response.statusCode == 200) {
+        return {'success': true, 'data': data};
+      } else {
+        return {'success': false, 'data': data};
+      }
+    } catch (e) {
+      print('Delete Account error: $e');
+      return {
+        'success': false,
+        'data': {'message': 'Network error occurred'}
+      };
+    }
+  }
+
 }

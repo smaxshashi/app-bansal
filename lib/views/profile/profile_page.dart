@@ -24,6 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
   String spouseDob = "null"; // Initial loading state for spouse dob
   String address = "null"; // Initial loading state for address
   String pincode = "null"; // Initial loading state for pincode
+    String phoneNumber = ""; // Store the phone number
 
   @override
   void initState() {
@@ -47,6 +48,7 @@ class _ProfilePageState extends State<ProfilePage> {
           address = data['address'] ?? "Not set";
           pincode = data['pincode'] ?? "Not set";
           profileImageUrl = data['image'];
+                    phoneNumber = data['phoneNumber'] ?? ""; // Update phone number
         });
       } else {
         // Handle failure (e.g., show an error message)
@@ -91,7 +93,22 @@ class _ProfilePageState extends State<ProfilePage> {
       }
     }
   }
-
+  _deleteAccount() async {
+    final response = await AuthService.deleteAccount(phoneNumber);
+    if (response['success']) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Account deleted successfully!')),
+      );
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginScreen()),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to delete account: ${response['data']['message']}')),
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -251,7 +268,24 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 50.h),
+              SizedBox(height: 12.h),
+                            // Delete Account Button
+              ElevatedButton(
+                onPressed: _deleteAccount,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red[900],
+                  minimumSize: Size(double.infinity, 48.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                ),
+                child: Text(
+                  "Delete Account",
+                  style: TextStyle(color: kWhite, fontSize: 16.sp),
+                ),
+              ),
+              
+              SizedBox(height: 100.h),
             ],
           ),
         ),
