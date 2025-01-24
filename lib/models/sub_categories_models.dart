@@ -18,7 +18,7 @@ class SubCategoryModels {
   final String? exfield1;
   final String? exfield2;
   final String? gender;
-  final String imageUrl;
+  final String? imageUrl;
   final DateTime createDate;
   final DateTime modiDate;
   final String wholesalerName;
@@ -35,7 +35,7 @@ class SubCategoryModels {
     this.exfield1,
     this.exfield2,
     this.gender,
-    required this.imageUrl,
+     this.imageUrl,
     required this.createDate,
     required this.modiDate,
     required this.wholesalerName,

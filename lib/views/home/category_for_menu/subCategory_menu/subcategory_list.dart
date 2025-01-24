@@ -102,64 +102,64 @@ class _SubcategoryListState extends State<SubcategoryList> {
       backgroundColor: Colors.grey[200],
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemCount: subcategories!.length,
-          itemBuilder: (context, index) {
-            final subcategory = subcategories![index];
-
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProductList(
-                      categoryCode: widget.categoryId,
-                      subCategoryCode: subcategory.subcategoryId,
-                      subCategoryName: subcategory.subCategoryName,
-                      wholesalerId: subcategory.wholesalerId,
-                    ),
-                  ),
-                );
-              },
-              child: Card(
-                elevation: 4,
-                margin: const EdgeInsets.symmetric(vertical: 8.0),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      subcategory.imageUrl.isNotEmpty
-                          ? ClipRRect(
-                              borderRadius: BorderRadius.circular(8.0),
-                              child: Image.network(
-                                subcategory.imageUrl,
-                                width: 80.0,
-                                height: 80.0,
-                                fit: BoxFit.cover,
-                              ),
-                            )
-                          : const Icon(Icons.image, size: 80.0),
-                      const SizedBox(width: 16.0),
-                      Expanded(
-                        child: Text(
-                          subcategory.subCategoryName,
-                          style: const TextStyle(
-                            fontSize: 18.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+        child:ListView.separated(
+  itemCount: subcategories!.length,
+  separatorBuilder: (context, index) => Divider(),
+  itemBuilder: (context, index) {
+    final subcategory = subcategories![index];
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProductList(
+              categoryCode: widget.categoryId,
+              subCategoryCode: subcategory.subcategoryId,
+              subCategoryName: subcategory.subCategoryName,
+              wholesalerId: subcategory.wholesalerId,
+            ),
+          ),
+        );
+      },
+      child: Card(
+        elevation: 4,
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              subcategory.imageUrl?.isNotEmpty ?? false
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        subcategory.imageUrl!,
+                        width: 80.0,
+                        height: 80.0,
+                        fit: BoxFit.cover,
                       ),
-                    ],
+                    )
+                  : const Icon(Icons.image, size: 80.0),
+              const SizedBox(width: 16.0),
+              Expanded(
+                child: Text(
+                  subcategory.subCategoryName,
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-            );
-          },
+            ],
+          ),
         ),
       ),
+    );
+  },
+)
+),
     );
   }
 }
