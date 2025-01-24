@@ -268,20 +268,20 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 12.h),
+              SizedBox(height: 150.h),
                             // Delete Account Button
               ElevatedButton(
                 onPressed: _deleteAccount,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red[900],
-                  minimumSize: Size(double.infinity, 48.h),
+                  backgroundColor: Colors.red[100],
+                  minimumSize: Size(30.w, 40.h),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.r),
+                    borderRadius: BorderRadius.circular(50.r),
                   ),
                 ),
                 child: Text(
                   "Delete Account",
-                  style: TextStyle(color: kWhite, fontSize: 16.sp),
+                  style: TextStyle(color: Colors.red, fontSize: 16.sp),
                 ),
               ),
               
