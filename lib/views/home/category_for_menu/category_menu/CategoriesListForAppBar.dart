@@ -12,15 +12,22 @@ import 'package:get/get.dart';
 class CategoriesListForAppBar extends HookWidget {
   const CategoriesListForAppBar({super.key});
 
+  static List<CategoryModels>? _cachedCategoriesList; // Memory cache for categories
+
   @override
   Widget build(BuildContext context) {
     final hookResult = UseFetchCategories();
-    List<CategoryModels>? categoriesList = hookResult.data;
-    final isLoading = hookResult.isloading;
+    List<CategoryModels>? categoriesList = _cachedCategoriesList ?? hookResult.data;
+    final isLoading = hookResult.isloading && _cachedCategoriesList == null; // Show loading only on first fetch
     final error = hookResult.error;
 
     // Ensure proper initialization of ScreenUtil
     ScreenUtil.init(context);
+
+    // Cache the categoriesList once fetched
+    if (categoriesList != null && categoriesList.isNotEmpty && _cachedCategoriesList == null) {
+      _cachedCategoriesList = categoriesList;
+    }
 
     if (isLoading) {
       return Center(
@@ -77,8 +84,7 @@ class CategoriesListForAppBar extends HookWidget {
                       Get.to(
                         () => SubcategoryList(
                           categoryId: category.categoryId,
-                          selectedGender:
-                              selectedGender, // Pass gender as a string
+                          selectedGender: selectedGender, // Pass gender as a string
                         ),
                         transition: Transition.cupertino,
                         duration: const Duration(milliseconds: 900),

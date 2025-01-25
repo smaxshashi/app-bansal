@@ -78,47 +78,55 @@ class AuthService {
   }
 
   // OTP Verification Function
-  static Future<Map<String, dynamic>> verifyOtp(
-      String phoneNumber, String otp) async {
-    final baseUrl = Uri.parse(
-        'https://user-service-254137058023.asia-south1.run.app/user/verify?phoneNumber=$phoneNumber&otp=$otp');
-    final url = await appendWholesalerId(baseUrl);
+static Future<Map<String, dynamic>> verifyOtp(String phoneNumber, String otp) async {
+  if (otp.length != 3) {
+    return {
+      'success': false,
+      'data': {'message': 'OTP must be 3 digits long'}
+    };
+  }
 
-    try {
-      final response = await http.post(
-        url,
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'phoneNumber': phoneNumber, 'otp': otp}),
-      );
+  final baseUrl = Uri.parse(
+      'https://user-service-254137058023.asia-south1.run.app/user/verify?phoneNumber=$phoneNumber&otp=$otp');
+  final url = await appendWholesalerId(baseUrl);
 
-      print('Response Body: ${response.body}');
-      print('Status Code: ${response.statusCode}');
+  try {
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'phoneNumber': phoneNumber, 'otp': otp}),
+    );
 
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        final prefs = await SharedPreferences.getInstance();
+    final data = json.decode(response.body);
 
-        // Save login state
+    if (response.statusCode == 200) {
+      final prefs = await SharedPreferences.getInstance();
+
+      if (data['userId'] != null) {
         prefs.setBool('isLoggedIn', true);
-
-        // Save userId if it exists
-        if (data.containsKey('userId') && data['userId'] != null) {
-          prefs.setString('userId', data['userId'].toString());
-        }
-
+        prefs.setString('userId', data['userId'].toString());
         return {'success': true, 'data': data};
       } else {
-        print('Error: Non-200 status code received: ${response.statusCode}');
-        return {'success': false, 'data': json.decode(response.body)};
+        return {
+          'success': false,
+          'data': {'message': 'Invalid OTP or OTP has Expired'}
+        };
       }
-    } catch (e) {
-      print('Exception occurred: $e');
+    } else if (response.statusCode == 401) {
       return {
         'success': false,
-        'data': {'message': 'Network error occurred: $e'}
+        'data': {'message': 'OTP does not match. Please try again.'}
       };
+    } else {
+      return {'success': false, 'data': data};
     }
+  } catch (e) {
+    return {
+      'success': false,
+      'data': {'message': 'Network error occurred: $e'}
+    };
   }
+}
 
   // Check if user is logged in
   static Future<bool> isUserLoggedIn() async {

@@ -66,40 +66,39 @@ class _OtpScreenState extends State<OtpScreen> {
     startResendTimer();
   }
 
-  void handleOtpVerification() async {
-    String otp = otpFields.map((controller) => controller.text).join();
+void handleOtpVerification() async {
+  String otp = otpFields.map((controller) => controller.text).join();
 
-    if (otp.length != 3) {
-      Get.snackbar('Error', 'Please enter complete OTP');
-      return;
-    }
-
-    setState(() => isLoading = true);
-
-    final result = await AuthService.verifyOtp(widget.phoneNumber, otp);
-
-    setState(() => isLoading = false);
-
-    if (result['success']) {
-      Get.offAll(() => MainScreen()); // Replace with your home screen
-    } else {
-      // Show error message
-      String message = result['data']['message'] ?? 'Failed to verify OTP';
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: const Text('Error'),
-          content: Text(message),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
-    }
+  if (otp.length != 3) {
+    Get.snackbar('Error', 'Please enter a complete OTP');
+    return;
   }
+
+  setState(() => isLoading = true);
+
+  final result = await AuthService.verifyOtp(widget.phoneNumber, otp);
+
+  setState(() => isLoading = false);
+
+  if (result['success']) {
+    Get.offAll(() => MainScreen()); // Replace with your home screen
+  } else {
+    String message = result['data']['message'] ?? 'Failed to verify OTP';
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: const Text('Error'),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
   @override
   Widget build(BuildContext context) {
