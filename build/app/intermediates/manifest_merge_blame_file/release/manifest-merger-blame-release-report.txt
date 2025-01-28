@@ -1,0 +1,268 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.bansalandsons.jewellaryApplication"
+4    android:versionCode="14"
+5    android:versionName="3.2.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:2:5-67
+11-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:2:22-64
+12    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+12-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:3:5-77
+12-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:3:22-74
+13    <!--
+14         Required to query activities that can process text, see:
+15         https://developer.android.com/training/package-visibility and
+16         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+17
+18         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+19    -->
+20    <queries>
+20-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:41:5-59:15
+21        <intent>
+21-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:42:9-45:18
+22            <action android:name="android.intent.action.PROCESS_TEXT" />
+22-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:43:13-72
+22-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:43:21-70
+23
+24            <data android:mimeType="text/plain" />
+24-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:44:13-50
+24-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:44:19-48
+25        </intent>
+26
+27        <!-- Allow querying WhatsApp -->
+28        <intent>
+28-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:48:9-51:18
+29            <action android:name="android.intent.action.VIEW" />
+29-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:49:13-65
+29-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:49:21-62
+30
+31            <data
+31-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:44:13-50
+32                android:host="wa.me"
+32-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:50:42-62
+33                android:scheme="https" />
+33-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:50:19-41
+34        </intent>
+35        <!-- Allow querying call intents -->
+36        <intent>
+36-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:53:9-55:18
+37            <action android:name="android.intent.action.DIAL" />
+37-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:54:13-65
+37-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:54:21-62
+38        </intent>
+39        <intent>
+39-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:56:9-58:18
+40            <action android:name="android.intent.action.CALL" />
+40-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:57:13-65
+40-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:57:21-62
+41        </intent>
+42    </queries>
+43
+44    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+44-->[androidx.media3:media3-common:1.4.1] /Users/anshumandash/.gradle/caches/transforms-3/fb89f0c362a653ee9ecb55124e65a97f/transformed/jetified-media3-common-1.4.1/AndroidManifest.xml:22:5-79
+44-->[androidx.media3:media3-common:1.4.1] /Users/anshumandash/.gradle/caches/transforms-3/fb89f0c362a653ee9ecb55124e65a97f/transformed/jetified-media3-common-1.4.1/AndroidManifest.xml:22:22-76
+45
+46    <permission
+46-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+47        android:name="com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+47-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+48        android:protectionLevel="signature" />
+48-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+49
+50    <uses-permission android:name="com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+50-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+50-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+51
+52    <application
+53        android:name="android.app.Application"
+53-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:6:9-42
+54        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+54-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+55        android:extractNativeLibs="true"
+56        android:icon="@mipmap/ic_launcher"
+56-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:7:9-43
+57        android:label="BANSAL &amp; SONS JEWELLERS" >
+57-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:5:9-52
+58        <activity
+58-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:8:9-29:20
+59            android:name="com.bansalandsons.jewellaryApplication.MainActivity"
+59-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:9:13-41
+60            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:14:13-163
+61            android:exported="true"
+61-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:10:13-36
+62            android:hardwareAccelerated="true"
+62-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:15:13-47
+63            android:launchMode="singleTop"
+63-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:11:13-43
+64            android:taskAffinity=""
+64-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:12:13-36
+65            android:theme="@style/LaunchTheme"
+65-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:13:13-47
+66            android:windowSoftInputMode="adjustResize" >
+66-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:16:13-55
+67
+68            <!--
+69                 Specifies an Android theme to apply to this Activity as soon as
+70                 the Android process has started. This theme is visible to the user
+71                 while the Flutter UI initializes. After that, this theme continues
+72                 to determine the Window background behind the Flutter UI.
+73            -->
+74            <meta-data
+74-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:21:13-24:17
+75                android:name="io.flutter.embedding.android.NormalTheme"
+75-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:22:15-70
+76                android:resource="@style/NormalTheme" />
+76-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:23:15-52
+77
+78            <intent-filter>
+78-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:25:13-28:29
+79                <action android:name="android.intent.action.MAIN" />
+79-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:26:17-68
+79-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:26:25-66
+80
+81                <category android:name="android.intent.category.LAUNCHER" />
+81-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:27:17-76
+81-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:27:27-74
+82            </intent-filter>
+83        </activity>
+84        <!--
+85             Don't delete the meta-data below.
+86             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+87        -->
+88        <meta-data
+88-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:32:9-34:33
+89            android:name="flutterEmbedding"
+89-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:33:13-44
+90            android:value="2" />
+90-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:34:13-30
+91
+92        <provider
+92-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:9-17:20
+93            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+93-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-82
+94            android:authorities="com.bansalandsons.jewellaryApplication.flutter.image_provider"
+94-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+95            android:exported="false"
+95-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+96            android:grantUriPermissions="true" >
+96-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-47
+97            <meta-data
+97-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-16:75
+98                android:name="android.support.FILE_PROVIDER_PATHS"
+98-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:17-67
+99                android:resource="@xml/flutter_image_picker_file_paths" />
+99-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-72
+100        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+101        <service
+101-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:19:9-31:19
+102            android:name="com.google.android.gms.metadata.ModuleDependencies"
+102-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-78
+103            android:enabled="false"
+103-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-36
+104            android:exported="false" >
+104-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-37
+105            <intent-filter>
+105-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:24:13-26:29
+106                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+106-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:25:17-94
+106-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:25:25-91
+107            </intent-filter>
+108
+109            <meta-data
+109-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:28:13-30:36
+110                android:name="photopicker_activity:0:required"
+110-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:29:17-63
+111                android:value="" />
+111-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:30:17-33
+112        </service>
+113
+114        <activity
+114-->[:url_launcher_android] /Users/anshumandash/StudioProjects/gehnamall/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:8:9-11:74
+115            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+115-->[:url_launcher_android] /Users/anshumandash/StudioProjects/gehnamall/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:13-74
+116            android:exported="false"
+116-->[:url_launcher_android] /Users/anshumandash/StudioProjects/gehnamall/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-37
+117            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+117-->[:url_launcher_android] /Users/anshumandash/StudioProjects/gehnamall/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-71
+118
+119        <uses-library
+119-->[androidx.window:window:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/b61292485483c7499e83c4f5c6f9bd1a/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+120            android:name="androidx.window.extensions"
+120-->[androidx.window:window:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/b61292485483c7499e83c4f5c6f9bd1a/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+121            android:required="false" />
+121-->[androidx.window:window:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/b61292485483c7499e83c4f5c6f9bd1a/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+122        <uses-library
+122-->[androidx.window:window:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/b61292485483c7499e83c4f5c6f9bd1a/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+123            android:name="androidx.window.sidecar"
+123-->[androidx.window:window:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/b61292485483c7499e83c4f5c6f9bd1a/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+124            android:required="false" />
+124-->[androidx.window:window:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/b61292485483c7499e83c4f5c6f9bd1a/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+125
+126        <provider
+126-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+127            android:name="androidx.startup.InitializationProvider"
+127-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+128            android:authorities="com.bansalandsons.jewellaryApplication.androidx-startup"
+128-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+129            android:exported="false" >
+129-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+130            <meta-data
+130-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+131                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+131-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+132                android:value="androidx.startup" />
+132-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/anshumandash/.gradle/caches/transforms-3/a4def40035927cb6d856303427b50933/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+133            <meta-data
+133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+134                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+134-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+135                android:value="androidx.startup" />
+135-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+136        </provider>
+137
+138        <receiver
+138-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+139            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+139-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+140            android:directBootAware="false"
+140-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+141            android:enabled="true"
+141-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+142            android:exported="true"
+142-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+143            android:permission="android.permission.DUMP" >
+143-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+144            <intent-filter>
+144-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+145                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+145-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+146            </intent-filter>
+147            <intent-filter>
+147-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+148                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+148-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+149            </intent-filter>
+150            <intent-filter>
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+151                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+152            </intent-filter>
+153            <intent-filter>
+153-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+154                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/anshumandash/.gradle/caches/transforms-3/ec9fdb662d7f540d2603f340c7b5ab14/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+155            </intent-filter>
+156        </receiver>
+157    </application>
+158
+159</manifest>
