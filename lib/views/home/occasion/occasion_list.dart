@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gehnamall/common/shimmers/Light_categories_shimmer.dart';
+import 'package:gehnamall/constants/constants.dart';
 import 'package:gehnamall/hooks/fetch_occasion.dart';
 import 'package:gehnamall/models/occasion/occasion_models.dart';
 import 'package:gehnamall/views/home/occasion/occasion_product_screen.dart';
@@ -74,16 +75,25 @@ return Stack(
         ],
       ),
     ),
-    Positioned(
-      bottom: 10.h, // Adjust the bottom position
-      right: 10.w, // Adjust the left position
-      child: IconButton(
-        icon: Icon(Icons.arrow_forward, size: 24.sp, color: Colors.black),
-        onPressed: () {
-    
-        },
-      ),
+  Positioned(
+  bottom: 10.h, // Adjust the bottom position
+  right: 10.w, // Adjust the right position
+  child: Container(
+     width: 35.w, // Set a fixed width for the container
+    height: 35.h,
+    decoration: BoxDecoration(
+      color: kDark, // Set your desired background color here
+      borderRadius: BorderRadius.circular(30), // Optional: Makes the background color rounded
     ),
+    child: IconButton(
+      icon: Icon(Icons.arrow_forward_rounded, size: 20.sp, color: Colors.white),
+      onPressed: () {
+        // Add your onPressed functionality
+      },
+    ),
+  ),
+),
+
   ],
 );
 }
