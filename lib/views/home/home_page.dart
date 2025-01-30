@@ -17,6 +17,7 @@ import 'package:gehnamall/views/home/occasion/occasion_list.dart';
 import 'package:gehnamall/views/home/slidder_one/slidder_second.dart';
 import 'package:gehnamall/views/home/soulmate/soulmate_list.dart';
 import 'package:gehnamall/views/home/store_location/store_location.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'detail/detail.dart';
 import 'slidder_one/slidder_one.dart';
@@ -65,12 +66,12 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     "🎁 Find the Perfect Present",
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Cursive',
-                      fontSize: 25.sp,
-                      fontWeight: FontWeight.bold,
-                      color: kDark,
-                    ),
+                    style: GoogleFonts.cedarvilleCursive( // Example cursive font from Google Fonts
+  fontSize: 25.sp,
+
+  color: kDark,
+),
+
                   ),
                 ),
                 GiftingList(),
@@ -114,35 +115,35 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _sectionTitle(String title) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w), // Adjust padding
-      child: Row(
-        children: [
-          Expanded(
-            child: Divider(
-              color: Colors.grey,
-              thickness: 1,
-              endIndent: 8.w, // Spacing to the text
-            ),
+Widget _sectionTitle(String title) {
+  return Padding(
+    padding: EdgeInsets.symmetric(horizontal: 16.w), // Adjust padding
+    child: Row(
+      children: [
+        Expanded(
+          child: Divider(
+            color: Colors.grey,
+            thickness: 1,
+            endIndent: 8.w, // Spacing to the text
           ),
-          Text(
-            title,
-            style: TextStyle(
-              fontWeight: FontWeight.w800,
-              fontSize: 20.sp,
-              color: kDark,
-            ),
+        ),
+        Text(
+          title,
+          style: GoogleFonts.ptSerif( // Using a close alternative to Bahnschrift
+            fontWeight: FontWeight.w700,
+            fontSize: 20.sp,
+            color: kDark,
           ),
-          Expanded(
-            child: Divider(
-              color: Colors.grey,
-              thickness: 1,
-              indent: 8.w, // Spacing to the text
-            ),
+        ),
+        Expanded(
+          child: Divider(
+            color: Colors.grey,
+            thickness: 1,
+            indent: 8.w, // Spacing to the text
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
 }
