@@ -26,11 +26,10 @@ class FollowTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.h,
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             _buildFollowButton(
               assetPath: 'assets/icons/instagram.png',
@@ -39,11 +38,13 @@ class FollowTabs extends StatelessWidget {
                 'https://www.instagram.com/bansal_and_sons_jewellers?igsh=MWQ5MWJ3dXNmZWlyeA==',
               ),
             ),
+            SizedBox(width: 16.w), // Added spacing between buttons
             _buildFollowButton(
               assetPath: 'assets/icons/whatsapp.png',
               label: 'WhatsApp',
               onTap: () => _launchUrl('https://wa.me/+917982031621'),
             ),
+            SizedBox(width: 16.w), // Added spacing between buttons
             _buildFollowButton(
               assetPath: 'assets/icons/facebook.png',
               label: 'Facebook',
@@ -51,6 +52,7 @@ class FollowTabs extends StatelessWidget {
                 'https://www.facebook.com/bansalandsonsjewellerspvtltd?mibextid=ZbWKwL',
               ),
             ),
+            SizedBox(width: 16.w), // Added spacing between buttons
             _buildFollowButton(
               assetPath: 'assets/icons/youtube.png',
               label: 'YouTube',
@@ -58,6 +60,7 @@ class FollowTabs extends StatelessWidget {
                 'https://www.youtube.com/@bansalsonsjewellers6387',
               ),
             ),
+            SizedBox(width: 16.w), // Added spacing between buttons
             _buildFollowButton(
               assetPath: 'assets/icons/social.png',
               label: 'Pinterest',

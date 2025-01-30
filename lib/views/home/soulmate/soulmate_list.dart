@@ -47,30 +47,30 @@ class SoulmateList extends HookWidget {
           spacing: 16.w, // Space between items horizontally
           runSpacing: 16.h, // Space between rows
           children: List.generate(soulmateList.length, (i) {
-            SoulmateModels soulmate = soulmateList[i];
-            return SizedBox(
-              width: (ScreenUtil().screenWidth - 48.w) /
-                  2, // 2 items per row, responsive width
-              child: ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(8.0), // Rounded corners for the items
-                child: Container(
-                  padding:
-                      EdgeInsets.all(4.w), // Add padding to avoid cutting off
-                  child: SoulmateWidgets(
-                    image: soulmate.imageUrl,
-                    title: soulmate.giftingName,
-                    onTap: () {
-                      // Navigate to the product screen on tap
-                      Get.to(() => SoulmateProductScreen(
-                            soulmate: soulmate.giftingName,
-                          ));
-                    },
-                  ),
-                ),
-              ),
-            );
-          }),
+  SoulmateModels soulmate = soulmateList[i];
+  String title = (i == 0) ? "MEN'S" : (i == 1) ? "WOMEN'S" : soulmate.giftingName;
+
+  return SizedBox(
+    width: (ScreenUtil().screenWidth - 48.w) / 2, // 2 items per row, responsive width
+    child: ClipRRect(
+      borderRadius: BorderRadius.circular(8.0), // Rounded corners for the items
+      child: Container(
+        padding: EdgeInsets.all(4.w), // Add padding to avoid cutting off
+        child: SoulmateWidgets(
+          image: soulmate.imageUrl,
+          title: title, // Dynamically assign the title
+          onTap: () {
+            // Navigate to the product screen on tap
+            Get.to(() => SoulmateProductScreen(
+                  soulmate: soulmate.giftingName,
+                ));
+          },
+        ),
+      ),
+    ),
+  );
+}),
+
         ),
       ),
     );

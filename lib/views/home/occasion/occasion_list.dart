@@ -40,7 +40,9 @@ class OccasionList extends HookWidget {
       );
     }
 
-    return Padding(
+return Stack(
+  children: [
+    Padding(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,13 +56,11 @@ class OccasionList extends HookWidget {
                 return Padding(
                   padding: EdgeInsets.only(right: 8.w),
                   child: SizedBox(
-                    width: (MediaQuery.of(context).size.width - 48.w) /
-                        3, // 3 items per row
+                    width: (MediaQuery.of(context).size.width - 48.w) / 3,
                     child: OccasionWidgets(
                       image: occasion.imageUrl,
                       title: occasion.giftingName,
                       onTap: () {
-                        // Navigate to the product screen on tap
                         Get.to(() => OccasionProductScreen(
                               occasion: occasion.giftingName,
                             ));
@@ -73,6 +73,18 @@ class OccasionList extends HookWidget {
           ),
         ],
       ),
-    );
-  }
+    ),
+    Positioned(
+      bottom: 10.h, // Adjust the bottom position
+      right: 10.w, // Adjust the left position
+      child: IconButton(
+        icon: Icon(Icons.arrow_forward, size: 24.sp, color: Colors.black),
+        onPressed: () {
+    
+        },
+      ),
+    ),
+  ],
+);
+}
 }

@@ -47,7 +47,7 @@ class LightCategoryList extends HookWidget {
     }
 
     return Container(
-      height: 100.h, // Adjusted for better responsiveness
+      height: 120.h, // Adjusted for better responsiveness
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

@@ -27,49 +27,51 @@ class LightCategoryWidget extends StatelessWidget {
             ));
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 5.w),
-        padding: EdgeInsets.symmetric(vertical: 4.h),
-        width: 50.w, // Adjusted for better responsiveness
+        margin: EdgeInsets.symmetric(horizontal: 8.w),
+        padding: EdgeInsets.symmetric(vertical: 6.h),
+        width: 60.w, // Increased width for better proportions
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
             color: kWhite,
-            width: 0.5.w,
+            width: 1.w,
           ),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              height: 40.h, // Ensure consistent image sizing
-              width: 40.h,
-              child: ClipOval(
-                child: CachedNetworkImage(
-                  imageUrl: lightCategories.imageUrl.toString(),
-                  fit: BoxFit.cover, // Ensure the image covers without overflow
-                  placeholder: (context, url) => Container(
-                    color: Colors.grey[200],
+        child: SingleChildScrollView(  // Wrap the column with SingleChildScrollView
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 60.h, // Increased image size
+                width: 60.h,
+                child: ClipOval(
+                  child: CachedNetworkImage(
+                    imageUrl: lightCategories.imageUrl.toString(),
+                    fit: BoxFit.cover,
+                    placeholder: (context, url) => Container(
+                      color: Colors.grey[200],
+                    ),
+                    errorWidget: (context, url, error) =>
+                        Icon(Icons.error, size: 25.r),
                   ),
-                  errorWidget: (context, url, error) =>
-                      Icon(Icons.error, size: 20.r),
                 ),
               ),
-            ),
-            SizedBox(height: 5.h),
-            Flexible(
-              child: Text(
-                lightCategories.categoryName,
-                style: TextStyle(
-                  fontSize: 10.sp,
-                  color: kDark,
-                  fontWeight: FontWeight.normal,
+              SizedBox(height: 8.h),
+              Flexible(
+                child: Text(
+                  lightCategories.categoryName,
+                  style: TextStyle(
+                    fontSize: 12.sp, // Increased font size
+                    color: kDark,
+                    fontWeight: FontWeight.bold, // Enhanced visibility
+                  ),
+                  
+                  textAlign: TextAlign.center,
                 ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                textAlign: TextAlign.center,
               ),
-            ),
-          ],
+              
+            ],
+          ),
         ),
       ),
     );

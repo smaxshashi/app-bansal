@@ -30,18 +30,7 @@ class SoulmateWidgets extends StatelessWidget {
               Container(
                 height: 200.h, // Scaled height for the image container
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border(
-                    top: BorderSide(
-                      color: Colors.yellow,
-                      width: 3.w,
-                    ),
-                    bottom: BorderSide(
-                      color: Colors.yellow,
-                      width: 3.w,
-                    ),
-                  ),
-                ),
+              
                 child: CachedNetworkImage(
                   imageUrl: image,
                   fit: BoxFit.cover,
@@ -58,19 +47,27 @@ class SoulmateWidgets extends StatelessWidget {
                   horizontal: 12.w, // Scales horizontal padding
                   vertical: 3.h, // Scales vertical padding
                 ),
-                child: Container(
-                  child: FittedBox(
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      style: appStyle(15, Colors.black,
-                          FontWeight.normal), // Scales text size
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-                  ),
-                ),
-              ),
+             child: Container(
+  decoration: BoxDecoration(
+    border: Border.all(
+      color: Colors.yellow,
+      width: 3.0, // Use a fixed value or make sure 3.w is valid if you're using a custom scale.
+    ),
+    borderRadius: BorderRadius.circular(8), // Adds rounded corners
+    color: Colors.white, // Optional: add a background color to the container
+  ),
+  padding: EdgeInsets.all(8.0), // Adds padding inside the container
+  child: FittedBox(
+    child: Text(
+      title,
+      textAlign: TextAlign.center,
+      style: appStyle(15, Colors.black, FontWeight.normal),
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
+    ),
+  ),
+),
+ ),
             ],
           ),
         ),

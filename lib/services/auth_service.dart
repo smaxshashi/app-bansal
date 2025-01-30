@@ -50,32 +50,40 @@ class AuthService {
   }
 
   // Login Function
-  static Future<Map<String, dynamic>> login(String phoneNumber) async {
-    final baseUrl = Uri.parse(
-        'https://user-service-254137058023.asia-south1.run.app/user/login?phoneNumber=$phoneNumber');
-    final url = await appendWholesalerId(baseUrl);
+// Login Function
+static Future<Map<String, dynamic>> login(String phoneNumber) async {
+  final baseUrl = Uri.parse(
+      'https://user-service-254137058023.asia-south1.run.app/user/login?phoneNumber=$phoneNumber');
+  final url = await appendWholesalerId(baseUrl);
 
-    try {
-      final response = await http.get(url);
-      final data = json.decode(response.body);
+  try {
+    final response = await http.get(url);
+    final data = json.decode(response.body);
 
-      if (response.statusCode == 200) {
-        return {'success': true, 'data': data};
-      } else if (response.statusCode == 404) {
+    if (response.statusCode == 200) {
+      // Check if status is -1
+      if (data['status'] == -1) {
         return {
           'success': false,
-          'data': {'message': 'User not registered'}
+          'data': {'message': 'User not Found. Please register First.'}
         };
-      } else {
-        return {'success': false, 'data': data};
       }
-    } catch (e) {
+      return {'success': true, 'data': data};
+    } else if (response.statusCode == 404) {
       return {
         'success': false,
-        'data': {'message': 'Network error occurred'}
+        'data': {'message': 'User not registered'}
       };
+    } else {
+      return {'success': false, 'data': data};
     }
+  } catch (e) {
+    return {
+      'success': false,
+      'data': {'message': 'Network error occurred'}
+    };
   }
+}
 
   // OTP Verification Function
 static Future<Map<String, dynamic>> verifyOtp(String phoneNumber, String otp) async {
