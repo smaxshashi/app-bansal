@@ -24,7 +24,8 @@ class _ProfilePageState extends State<ProfilePage> {
   String spouseDob = "null"; // Initial loading state for spouse dob
   String address = "null"; // Initial loading state for address
   String pincode = "null"; // Initial loading state for pincode
-    String phoneNumber = ""; // Store the phone number
+  String phoneNumber = ""; // Store the phone number
+  bool isLoading = true; // Loading state for user details
 
   @override
   void initState() {
@@ -48,18 +49,20 @@ class _ProfilePageState extends State<ProfilePage> {
           address = data['address'] ?? "Not set";
           pincode = data['pincode'] ?? "Not set";
           profileImageUrl = data['image'];
-                    phoneNumber = data['phoneNumber'] ?? ""; // Update phone number
+          phoneNumber = data['phoneNumber'] ?? ""; // Update phone number
+          isLoading = false; // Finished loading
         });
       } else {
-        // Handle failure (e.g., show an error message)
         setState(() {
           userName = "Error loading data";
           email = "Error loading data";
+          isLoading = false;
         });
       }
     } else {
       setState(() {
         userName = "User Name";
+        isLoading = false;
       });
     }
   }
@@ -93,6 +96,7 @@ class _ProfilePageState extends State<ProfilePage> {
       }
     }
   }
+
   _deleteAccount() async {
     final response = await AuthService.deleteAccount(phoneNumber);
     if (response['success']) {
@@ -109,6 +113,7 @@ class _ProfilePageState extends State<ProfilePage> {
       );
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,7 +124,6 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Padding(
         padding: EdgeInsets.all(16.r),
         child: SingleChildScrollView(
-          // Make the body scrollable
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -144,8 +148,11 @@ class _ProfilePageState extends State<ProfilePage> {
                             maxRadius: 40.r,
                             backgroundImage: selectedImage != null
                                 ? FileImage(selectedImage!)
-                                : profileImageUrl != null
-                                    ? NetworkImage(profileImageUrl!)
+                                : profileImageUrl?.isNotEmpty == true
+                                    ? FadeInImage.assetNetwork(
+                                        placeholder: 'assets/placeholder.png', // Add a placeholder image
+                                        image: profileImageUrl!,
+                                      ).image
                                     : null,
                             child: (selectedImage == null &&
                                     profileImageUrl == null)
@@ -157,22 +164,26 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                         SizedBox(height: 10.h),
-                        Text(
-                          userName, // Dynamic username
-                          style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        isLoading
+                            ? const CircularProgressIndicator()
+                            : Text(
+                                userName, // Dynamic username
+                                style: TextStyle(
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                         SizedBox(height: 20.h),
-                        Text(
-                          "Welcome to Bansal Jewellers Pvt Ltd",
-                          style: TextStyle(
-                            color: kDark,
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        isLoading
+                            ? const SizedBox()
+                            : Text(
+                                "Welcome to Bansal Jewellers Pvt Ltd",
+                                style: TextStyle(
+                                  color: kDark,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                       ],
                     ),
                   ),
@@ -269,7 +280,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               SizedBox(height: 150.h),
-                            // Delete Account Button
+
+              // Delete Account Button
               ElevatedButton(
                 onPressed: _deleteAccount,
                 style: ElevatedButton.styleFrom(
@@ -294,7 +306,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 }
 
-//here
+// ProfileDetailRow widget remains the same
 class ProfileDetailRow extends StatelessWidget {
   final String title;
   final String value;
