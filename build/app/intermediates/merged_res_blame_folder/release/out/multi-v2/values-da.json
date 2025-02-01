@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bansalandsons.jewellaryApplication.app-mergeReleaseResources-48:/values-da/values-da.xml",
+            "outputFile": "com.bansalandsons.jeweller.app-mergeReleaseResources-48:/values-da/values-da.xml",
             "map": [
                 {
                     "source": "/Users/anshumandash/.gradle/caches/transforms-3/5fd828c943c2aae4856e4aa49ae40e71/transformed/browser-1.8.0/res/values-da/values-da.xml",

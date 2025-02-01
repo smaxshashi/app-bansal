@@ -19119,10 +19119,10 @@ androidx.window.reflection.ReflectionUtils:
     public final boolean validateImplementation$window_release(java.lang.Class,java.lang.Class)
     public static synthetic boolean validateReflection$window_release$default(java.lang.String,kotlin.jvm.functions.Function0,int,java.lang.Object)
 androidx.window.reflection.WindowExtensionsConstants
-com.bansalandsons.jewellaryApplication.R$drawable
-com.bansalandsons.jewellaryApplication.R$mipmap
-com.bansalandsons.jewellaryApplication.R$style
-com.bansalandsons.jewellaryApplication.R
+com.bansalandsons.jeweller.R$drawable
+com.bansalandsons.jeweller.R$mipmap
+com.bansalandsons.jeweller.R$style
+com.bansalandsons.jeweller.R
 com.getkeepsafe.relinker.ApkLibraryInstaller:
     private static final int COPY_BUFFER_SIZE
     private static final int MAX_TRIES

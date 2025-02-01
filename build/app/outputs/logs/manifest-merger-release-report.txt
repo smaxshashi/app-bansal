@@ -166,7 +166,7 @@ action#android.intent.action.CALL
 ADDED from /Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:57:13-65
 	android:name
 		ADDED from /Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:57:21-62
-activity#com.bansalandsons.jewellaryApplication.MainActivity
+activity#com.bansalandsons.jeweller.MainActivity
 ADDED from /Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:8:9-29:20
 	android:launchMode
 		ADDED from /Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:11:13-43
@@ -464,7 +464,7 @@ ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transf
 		ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
-permission#com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.bansalandsons.jeweller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
@@ -474,7 +474,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
-uses-permission#com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.bansalandsons.jeweller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:22-94

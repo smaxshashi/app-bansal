@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bansalandsons.jewellaryApplication.app-mergeReleaseResources-48:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "com.bansalandsons.jeweller.app-mergeReleaseResources-48:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "/Users/anshumandash/.gradle/caches/transforms-3/5aff25ebc1fe8267cb92ec8c6109b220/transformed/material-1.12.0/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",

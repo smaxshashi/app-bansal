@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bansalandsons.jewellaryApplication"
+    package="com.bansalandsons.jeweller"
     android:versionCode="14"
     android:versionName="3.2.0" >
 
@@ -44,10 +44,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
-        android:name="com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.bansalandsons.jeweller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.bansalandsons.jeweller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:name="android.app.Application"
@@ -56,7 +56,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="BANSAL &amp; SONS JEWELLERS" >
         <activity
-            android:name="com.bansalandsons.jewellaryApplication.MainActivity"
+            android:name="com.bansalandsons.jeweller.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:exported="true"
             android:hardwareAccelerated="true"
@@ -91,7 +91,7 @@
 
         <provider
             android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-            android:authorities="com.bansalandsons.jewellaryApplication.flutter.image_provider"
+            android:authorities="com.bansalandsons.jeweller.flutter.image_provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -125,7 +125,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.bansalandsons.jewellaryApplication.androidx-startup"
+            android:authorities="com.bansalandsons.jeweller.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

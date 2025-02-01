@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.bansalandsons.jewellaryApplication"
+3    package="com.bansalandsons.jeweller"
 4    android:versionCode="14"
 5    android:versionName="3.2.0" >
 6
@@ -69,12 +69,12 @@
 45
 46    <permission
 46-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
-47        android:name="com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+47        android:name="com.bansalandsons.jeweller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 47-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
 48        android:protectionLevel="signature" />
 48-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
 49
-50    <uses-permission android:name="com.bansalandsons.jewellaryApplication.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+50    <uses-permission android:name="com.bansalandsons.jeweller.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 50-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
 50-->[androidx.core:core:1.13.1] /Users/anshumandash/.gradle/caches/transforms-3/4cefa050b0c4ea9b1f45909d19944071/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
 51
@@ -90,7 +90,7 @@
 57-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:5:9-52
 58        <activity
 58-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:8:9-29:20
-59            android:name="com.bansalandsons.jewellaryApplication.MainActivity"
+59            android:name="com.bansalandsons.jeweller.MainActivity"
 59-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:9:13-41
 60            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 60-->/Users/anshumandash/StudioProjects/gehnamall/android/app/src/main/AndroidManifest.xml:14:13-163
@@ -146,7 +146,7 @@
 92-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:9-17:20
 93            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
 93-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:13-82
-94            android:authorities="com.bansalandsons.jewellaryApplication.flutter.image_provider"
+94            android:authorities="com.bansalandsons.jeweller.flutter.image_provider"
 94-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
 95            android:exported="false"
 95-->[:image_picker_android] /Users/anshumandash/StudioProjects/gehnamall/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
@@ -208,7 +208,7 @@
 126-->[androidx.emoji2:emoji2:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/5858c560332e543f6e06f8d4bfcbfc91/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 127            android:name="androidx.startup.InitializationProvider"
 127-->[androidx.emoji2:emoji2:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/5858c560332e543f6e06f8d4bfcbfc91/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-128            android:authorities="com.bansalandsons.jewellaryApplication.androidx-startup"
+128            android:authorities="com.bansalandsons.jeweller.androidx-startup"
 128-->[androidx.emoji2:emoji2:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/5858c560332e543f6e06f8d4bfcbfc91/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
 129            android:exported="false" >
 129-->[androidx.emoji2:emoji2:1.2.0] /Users/anshumandash/.gradle/caches/transforms-3/5858c560332e543f6e06f8d4bfcbfc91/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37

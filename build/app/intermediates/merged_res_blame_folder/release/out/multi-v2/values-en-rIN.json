@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.bansalandsons.jewellaryApplication.app-mergeReleaseResources-48:/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "com.bansalandsons.jeweller.app-mergeReleaseResources-48:/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
                     "source": "/Users/anshumandash/.gradle/caches/transforms-3/881cb129928b7d48dd99db93fe86329b/transformed/appcompat-1.6.1/res/values-en-rIN/values-en-rIN.xml",
