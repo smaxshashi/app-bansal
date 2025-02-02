@@ -23,7 +23,7 @@ class SoulmateWidgets extends StatelessWidget {
         padding: EdgeInsets.all(8.w), // Use screen width scaling for padding
         child: Container(
           width: 150.w, // Scaled width
-          height: 250.h, // Scaled height
+          height: 260.h, // Scaled height
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

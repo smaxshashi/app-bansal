@@ -24,7 +24,7 @@ class CategoriesWidgets extends StatelessWidget {
         child: Container(
           width: 150.w, // Dynamic width using ScreenUtil
           constraints: BoxConstraints(
-            maxHeight: 180.h, // Ensure container doesn't overflow
+            maxHeight: 200.h, // Ensure container doesn't overflow
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

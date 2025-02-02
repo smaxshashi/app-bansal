@@ -16,7 +16,8 @@ class ProductDetailScreen extends StatelessWidget {
   final ProductDetailsController controller =
       Get.put(ProductDetailsController());
 
-  ProductDetailScreen({Key? key, required this.product}) : super(key: key);
+  ProductDetailScreen({Key? key, required this.product})
+      : super(key: key);
 
   Future<String> getUserId() async {
     final userId = await AuthService.getUserId();
@@ -66,7 +67,7 @@ class ProductDetailScreen extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     children: [
                       ClipRRect(
-                        child: SizedBox(
+                        child: Container(
                           height: 300.h, // Use ScreenUtil for height
                           child: PageView.builder(
                             controller: controller.pageController,
@@ -74,43 +75,39 @@ class ProductDetailScreen extends StatelessWidget {
                                 controller.currentImageIndex.value = index,
                             itemCount: product.imageUrls.length,
                             itemBuilder: (context, index) {
-                              return CachedNetworkImage(
-                                imageUrl: product.imageUrls[index],
-                                height: 220.h, // Use ScreenUtil for height
-                                fit: BoxFit.cover,
-                                errorWidget: (context, error, stackTrace) =>
-                                    Icon(Icons.broken_image,
-                                        size: 220.h), // Use ScreenUtil for size
+                              return Container(
+                                height: 300.h,
+                                child: CachedNetworkImage(
+                                  imageUrl: product.imageUrls[index],
+                                  fit: BoxFit.cover,
+                                  errorWidget: (context, error, stackTrace) =>
+                                      Icon(Icons.broken_image, size: 220.h),
+                                ),
                               );
                             },
                           ),
                         ),
                       ),
-                      Obx(() => Row(
+                      Positioned(
+                        bottom: 10.h,
+                        child: Obx(() => Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children:
-                              List.generate(product.imageUrls.length, (index) {
+                          children: List.generate(product.imageUrls.length, (index) {
                             return AnimatedContainer(
                               duration: Duration(milliseconds: 300),
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 4.w,
-                                  vertical: 8.h), // Use ScreenUtil for margin
-                              width: controller.currentImageIndex.value == index
-                                  ? 12.w // Use ScreenUtil for width
-                                  : 8.w, // Use ScreenUtil for width
-                              height:
-                                  controller.currentImageIndex.value == index
-                                      ? 12.h // Use ScreenUtil for height
-                                      : 8.h, // Use ScreenUtil for height
+                              margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 8.h),
+                              width: controller.currentImageIndex.value == index ? 12.w : 8.w,
+                              height: controller.currentImageIndex.value == index ? 12.h : 8.h,
                               decoration: BoxDecoration(
-                                color: controller.currentImageIndex.value ==
-                                        index
-                                    ? const Color.fromARGB(255, 255, 255, 255)
+                                color: controller.currentImageIndex.value == index
+                                    ? Colors.white
                                     : Colors.grey[300],
                                 shape: BoxShape.circle,
                               ),
                             );
-                          }))),
+                          }),
+                        )),
+                      ),
                     ],
                   ),
                   SizedBox(height: 16.h),
@@ -138,36 +135,24 @@ class ProductDetailScreen extends StatelessWidget {
                           children: [
                             Text(
                               'Karat: ${product.karat}',
-                              style: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight
-                                      .w500), // Use ScreenUtil for font size
+                              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
                             ),
                           ],
                         ),
                         SizedBox(height: 8.h),
                         Text(
                           'Weight: ${product.weight}gm',
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight
-                                  .w500), // Use ScreenUtil for font size
+                          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
                         ),
                         SizedBox(height: 8.h),
                         Text(
                           'MakingCharge: ${product.wastage}%',
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight
-                                  .w500), // Use ScreenUtil for font size
+                          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
                         ),
                         SizedBox(height: 8.h),
                         Text(
                           'Description:${product.description}',
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight
-                                  .w500), // Use ScreenUtil for font size
+                          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
                         ),
                         SizedBox(height: 8.h),
                         Container(
@@ -176,36 +161,27 @@ class ProductDetailScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               ElevatedButton.icon(
-                                onPressed: () =>
-                                    _launchUrl('https://wa.me/+917982031621'),
+                                onPressed: () => _launchUrl('https://wa.me/+917982031621'),
                                 icon: Image.asset(
                                   'assets/icons/whatsapp.png',
-                                  // Use ScreenUtil for width
-                                  height: 14.h, // Use ScreenUtil for height
+                                  height: 14.h,
                                 ),
-                                label: Expanded(
-                                  child: Text(
-                                    'Click WhatsApp to ask!',
-                                    style: TextStyle(
-                                        color: Colors.green, fontSize: 8.sp),
-                                  ),
+                                label: Text(
+                                  'Click WhatsApp to ask!',
+                                  style: TextStyle(color: Colors.green, fontSize: 8.sp),
                                 ),
                                 style: ElevatedButton.styleFrom(
                                   fixedSize: Size(160.w, 15.h),
                                   backgroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
-                                        color: Colors.green, width: 2.w),
-                                    borderRadius: BorderRadius.circular(
-                                      8.r,
-                                    ), // Use ScreenUtil for radius
+                                    side: BorderSide(color: Colors.green, width: 2.w),
+                                    borderRadius: BorderRadius.circular(8.r),
                                   ),
                                 ),
                               ),
                               SizedBox(width: 10.w),
                               ElevatedButton.icon(
-                                onPressed: () =>
-                                    _launchUrl('tel:+917982031621'),
+                                onPressed: () => _launchUrl('tel:+917982031621'),
                                 icon: Icon(
                                   Icons.phone,
                                   color: Colors.green,
@@ -213,36 +189,28 @@ class ProductDetailScreen extends StatelessWidget {
                                 ),
                                 label: Text(
                                   'Click to Call!',
-                                  style: TextStyle(
-                                      color: Colors.green, fontSize: 8.sp),
+                                  style: TextStyle(color: Colors.green, fontSize: 8.sp),
                                 ),
                                 style: ElevatedButton.styleFrom(
-                                  side: BorderSide(
-                                      color: Colors.green, width: 2.w),
+                                  side: BorderSide(color: Colors.green, width: 2.w),
                                   backgroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        8.r), // Use ScreenUtil for radius
+                                    borderRadius: BorderRadius.circular(8.r),
                                   ),
                                 ),
                               ),
                             ],
                           ),
                         ),
-                        SizedBox(
-                          height: 8.h,
-                        ),
+                        SizedBox(height: 8.h),
                         Row(
                           children: [
-                            Icon(
-                              Icons.verified,
-                              color: kPrimary,
-                            ),
+                            Icon(Icons.verified, color: kPrimary),
                             SizedBox(width: 8.w),
                             Text(
                               'Bansal & Sons Jewellers',
                               style: TextStyle(
-                                fontSize: 16.sp, // Use ScreenUtil for font size
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -253,20 +221,16 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 16.h),
 
-                  // WhatsApp and Call Buttons
-
-                  SizedBox(height: 16.h),
-
+                  // Add to Wishlist Button
                   CustomButton(
                     label: 'Add to Wishlist',
                     onPressed: () {
-                      cartController.addToCart(
-                          userId, product.productId.toString());
+                      cartController.addToCart(userId, product.productId.toString());
                     },
-                    width: 550.w, // Use ScreenUtil for width
-                    height: 50.h, // Use ScreenUtil for height
+                    width: 550.w, 
+                    height: 50.h,
                     color: kDark,
-                    fontSize: 20.sp, // Use ScreenUtil for font size
+                    fontSize: 20.sp,
                     textColor: Colors.white,
                   ),
                 ],

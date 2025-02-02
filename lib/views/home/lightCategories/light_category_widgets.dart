@@ -29,13 +29,10 @@ class LightCategoryWidget extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 8.w),
         padding: EdgeInsets.symmetric(vertical: 6.h),
-        width: 60.w, // Increased width for better proportions
+        width: 65.w, // Increased width for better proportions
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: kWhite,
-            width: 1.w,
-          ),
+         
         ),
         child: SingleChildScrollView(  // Wrap the column with SingleChildScrollView
           child: Column(
@@ -67,7 +64,9 @@ class LightCategoryWidget extends StatelessWidget {
                   ),
                   
                   textAlign: TextAlign.center,
+                  maxLines: 1,
                 ),
+                
               ),
               
             ],
